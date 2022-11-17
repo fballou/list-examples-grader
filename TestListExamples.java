@@ -14,6 +14,50 @@ public class TestListExamples {
 
         assertArrayEquals(expected.toArray(), test.toArray());
     }
+
+
+  @Test (timeout = 6000)
+  public void testMerge() {
+    ArrayList<String> input1 = new ArrayList<>(Arrays.asList("a", "b", "d", "e"));
+    ArrayList<String> input2 = new ArrayList<>(Arrays.asList("c", "f", "g", "p"));
+    ArrayList<String> expected = new ArrayList<>(Arrays.asList("a", "b" , "c", "d", "e", "f", "g", "p"));
+
+    List<String> test = ListExamples.merge(input1, input2);
+
+    assertArrayEquals(expected.toArray(), test.toArray());
+}
+
+@Test (timeout = 6000) 
+public void emptyInput1Merge() {
+  ArrayList<String> input1 = new ArrayList<>();
+  ArrayList<String> input2 = new ArrayList<>(Arrays.asList("a","b","c","d"));
+
+  List<String> test = ListExamples.merge(input1, input2);
+
+  assertArrayEquals(input2.toArray(), test.toArray());
+}
+
+@Test (timeout = 6000)
+public void emptyInput2Merge() {
+  ArrayList<String> input2 = new ArrayList<>();
+  ArrayList<String> input1 = new ArrayList<>(Arrays.asList("a","b","c","d"));
+
+  List<String> test = ListExamples.merge(input1, input2);
+
+  assertArrayEquals(input1.toArray(), test.toArray());
+}
+
+@Test (timeout = 6000)
+public void bothEmptyMerge() {
+  ArrayList<String> input1 = new ArrayList<>();
+  ArrayList<String> input2 = new ArrayList<>();
+  ArrayList<String> expected = new ArrayList<>();
+
+  List<String> test = ListExamples.merge(input1, input2);
+
+  assertArrayEquals(expected.toArray(), test.toArray());
+}
+
 }
 
 class HasAnAnd implements StringChecker {
