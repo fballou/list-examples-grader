@@ -16,7 +16,7 @@ public class TestListExamples {
     }
 
 
-  @Test (timeout = 6000)
+  @Test (timeout = 2000)
   public void testMerge() {
     ArrayList<String> input1 = new ArrayList<>(Arrays.asList("a", "b", "d", "e"));
     ArrayList<String> input2 = new ArrayList<>(Arrays.asList("c", "f", "g", "p"));
@@ -27,7 +27,7 @@ public class TestListExamples {
     assertArrayEquals(expected.toArray(), test.toArray());
 }
 
-@Test (timeout = 6000) 
+@Test (timeout = 2000) 
 public void emptyInput1Merge() {
   ArrayList<String> input1 = new ArrayList<>();
   ArrayList<String> input2 = new ArrayList<>(Arrays.asList("a","b","c","d"));
@@ -37,7 +37,7 @@ public void emptyInput1Merge() {
   assertArrayEquals(input2.toArray(), test.toArray());
 }
 
-@Test (timeout = 6000)
+@Test (timeout = 2000)
 public void emptyInput2Merge() {
   ArrayList<String> input2 = new ArrayList<>();
   ArrayList<String> input1 = new ArrayList<>(Arrays.asList("a","b","c","d"));
@@ -47,7 +47,7 @@ public void emptyInput2Merge() {
   assertArrayEquals(input1.toArray(), test.toArray());
 }
 
-@Test (timeout = 6000)
+@Test (timeout = 2000)
 public void bothEmptyMerge() {
   ArrayList<String> input1 = new ArrayList<>();
   ArrayList<String> input2 = new ArrayList<>();

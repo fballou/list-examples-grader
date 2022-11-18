@@ -32,4 +32,20 @@ fi
 
 javac -cp $CPATH *.java
 
-java -cp $CPATH org.junit.runner.JUnitCore TestListExamples
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples | grep "Tests run:" > results.txt
+
+NUMS=(`grep -o '[0-9]' results.txt`)
+TOTAL=${NUMS[0]}
+FAILED=${NUMS[1]}
+echo "$FAILED tests failed out of $TOTAL tests"
+
+# if [[ grep "passed" out.txt ]] 
+# then 
+#     echo "All Tests Passed! Congratulations you finished the assignment!"
+#     exit
+# else
+#     echo "You had tests that failed. Try again."
+#     exit
+# fi
+
+
