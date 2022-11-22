@@ -35,6 +35,7 @@ class Handler implements URLHandler {
        if (url.getPath().equals("/grade")) {
            String[] parameters = url.getQuery().split("=");
            if (parameters[0].equals("repo")) {
+                System.out.println(parameters[1]);
                return ExecHelpers.exec(new String[]{"bash", "grade.sh", parameters[1]});
            }
            else {
@@ -60,3 +61,4 @@ class GradeServer {
     }
 }
 
+//ieng6-<the server number>.ucsd.edu:port#
